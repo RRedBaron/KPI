@@ -1,8 +1,1 @@
-﻿  header.cpp
-C:\Users\user\source\repos\OP_lab2\OP_lab2\header.cpp(21,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\user\source\repos\OP_lab2\OP_lab2\header.cpp(73,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\user\source\repos\OP_lab2\OP_lab2\header.cpp(104,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\user\source\repos\OP_lab2\OP_lab2\header.cpp(113,23): warning C4018: <: несоответствие типов со знаком и без знака
-  main.cpp
-  Создание кода...
-  OP_lab2.vcxproj -> C:\Users\user\source\repos\OP_lab2\Debug\OP_lab2.exe
+﻿  OP_lab2.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab2-sem2\Debug\OP_lab2.exe
