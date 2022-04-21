@@ -1,1 +1,4 @@
-﻿  OP_lab3.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab3-sem2\Debug\OP_lab3.exe
+﻿  main.cpp
+C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab3-sem2\OP_lab3\main.cpp(10,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab3-sem2\OP_lab3\main.cpp(19,20): warning C4018: <: несоответствие типов со знаком и без знака
+  OP_lab3.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab3-sem2\Debug\OP_lab3.exe

@@ -8,12 +8,12 @@ using namespace std;
 class Worker {
 private:
 	string name;
-	int birth_day, birth_month, birth_year, age;
+	int birth_day, birth_month, birth_year;
 public:
 	Worker();
 	Worker(string line);
 	void ShowAgeOnGivenDate(string date);
-	friend bool operator> (const Worker& a, const Worker& b);
+	int FindAge();
 	string GetName();
 };
 

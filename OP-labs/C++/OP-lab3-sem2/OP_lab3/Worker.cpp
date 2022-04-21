@@ -15,7 +15,6 @@ Worker::Worker(string line) {
     birth_day = stoi(split(date, '-')[0]);
     birth_month = stoi(split(date, '-')[1]);
     birth_year = stoi(split(date, '-')[2]);
-    age = birth_day + birth_month*30 + birth_year*365;
 }
 
 string Worker::GetName() {
@@ -38,8 +37,8 @@ void Worker::ShowAgeOnGivenDate(string date) {
     printf("%d лет %d мес€цев %d дней\n", d_year, d_month, d_day);
 }
 
-bool operator > (const Worker& a, const Worker& b) {
-    return (a.age < b.age);
+int Worker::FindAge() {
+    return (birth_day + birth_month * 30 + birth_year * 365);
 }
 
 vector<string> split(string line, char sep) {
