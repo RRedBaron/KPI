@@ -1,4 +1,1 @@
-﻿  Worker.cpp
-C:\Users\user\source\repos\OP_lab3\OP_lab3\Worker.cpp(7,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\user\source\repos\OP_lab3\OP_lab3\Worker.cpp(49,23): warning C4018: <: несоответствие типов со знаком и без знака
-  OP_lab3.vcxproj -> C:\Users\user\source\repos\OP_lab3\Debug\OP_lab3.exe
+﻿  OP_lab3.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab3-sem2\Debug\OP_lab3.exe
