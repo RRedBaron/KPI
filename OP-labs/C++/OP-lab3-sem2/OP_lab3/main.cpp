@@ -19,7 +19,7 @@ int main() {
 	for (int i = 0; i < size; i++) {
 		cout << arr[i].GetName() << ' ';
 		arr[i].ShowAgeOnGivenDate(date);
-		if (arr[i].FindAge() > oldest.FindAge()) oldest = arr[i];
+		if (arr[i].FindAge() < oldest.FindAge()) oldest = arr[i];
 	}
 	cout << "Cтарший среди сотрудников: " << oldest.GetName() << endl;
 	delete[] arr;
