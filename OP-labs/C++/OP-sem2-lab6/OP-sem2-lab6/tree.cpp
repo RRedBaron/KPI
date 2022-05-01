@@ -52,8 +52,8 @@ void pr_obh(Branch* branch, vector <int> &base)
 	if (!is_element_in_vector(branch->number, base)) {
 		base.push_back(branch->number);
 	}
-	pr_obh(branch->left, base); //Обошли левое поддерево   
-	pr_obh(branch->right, base); //Обошли правое поддерево
+	pr_obh(branch->left, base);   
+	pr_obh(branch->right, base); 
 }
 
 bool is_element_in_vector(int elem, vector <int> base) {
