@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\user\source\repos\OP-sem2-lab6\OP-sem2-lab6\main.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OP-sem2-lab6.vcxproj -> C:\Users\user\source\repos\OP-sem2-lab6\Debug\OP-sem2-lab6.exe
