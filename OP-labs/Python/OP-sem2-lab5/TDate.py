@@ -1,4 +1,3 @@
-import re
 from abc import ABC, abstractmethod
 
 DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -66,7 +65,7 @@ class TDate(ABC):
 
     @abstractmethod
     def __str__(self):
-        return f"{self.day}:{self.month}:{self.year}"
+        pass
 
 
 class TDate1(TDate):
