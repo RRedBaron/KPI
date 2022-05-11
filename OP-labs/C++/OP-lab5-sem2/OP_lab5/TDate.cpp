@@ -1,9 +1,21 @@
 #include "TDate.h"
 
+TDate::TDate() {
+    this->day = 1;
+    this->month = 1;
+    this->year = 1970;
+}
+
 TDate::TDate(string line) {
-    this->day = stoi(timesplit(line)[0]);
-    this->month = stoi(timesplit(line)[1]);
-    this->year = stoi(timesplit(line)[2]);
+    regex regular("([\\d]{1,2})[- /:;.,_]([\\d]{1,2})[- /:;.,_]([\\d]{0,4})");
+    cmatch result;
+    while (!regex_match(line.c_str(), result, regular) || !IsDateValid(result)) {
+        cerr << "Wrong date format. Try again: ";
+        getline(cin, line);
+    }
+    day = stoi(result[1]);
+    month = stoi(result[2]);
+    year = stoi(result[3]);
 }
 
 int TDate::GetDays() {
@@ -78,35 +90,37 @@ bool TDate::IsInTimeInterval(string date1, string date2) {
     return (this->GetDays() >= lower && this->GetDays() <= upper);
 }
 
+bool IsDateValid(cmatch date) {
+    int day = stoi(date[1]);
+    int month = stoi(date[2]);
+    int year = stoi(date[3]);
+    if ((year % 4 == 0) && (month == 2) && (day > 29) || (year % 4 != 0) && (month == 2) && (day > 28)) {
+        return false;
+    }
+    if (((month == 4) || (month == 6) || (month == 9) || (month == 11)) && (day > 30)) {
+        return false;
+    }
+    if (((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || 
+        (month == 10) || (month == 12)) && (day > 31)) {
+        return false;
+    }
+    if (month > 12 || month < 1) return false;
+    return true;
+}
+
 void TDate::ShowDate() {
     printf("%d %d %d\n", day, month, year);
 }
 
-vector<string> timesplit(string line) {
-    vector<string> words;
-    char sep[4] = { ' ', ':', '-', '.' };
-    string temp_word = "";
-    line += ' ';
-    for (int i = 0; i < line.length(); i++) {
-        char* symbol = find(begin(sep), end(sep), line[i]);
-        if (symbol != end(sep)) {
-            if (temp_word.length() > 0) {
-                words.push_back(temp_word);
-            }
-            temp_word = "";
-        }
-        else {
-            temp_word += line[i];
-        }
+void PrintVector(vector <TDate*> base) {
+    for (auto& s : base) {
+        s->ShowDate();
     }
-    return words;
 }
 
-void PrintVector(vector <TDate*> base) {
-    for (int i = 0; i < base.size(); i++) {
-        base[i]->ShowDate();
-    }
-}
+TDate1::TDate1(string line):TDate(line) {}
+
+TDate2::TDate2(string line):TDate(line){}
 
 void TDate1::ShowDate() {
     printf("%d.%d.%d\n", day, month, year);

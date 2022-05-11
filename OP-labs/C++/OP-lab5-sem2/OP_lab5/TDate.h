@@ -2,17 +2,18 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <regex>
 
 using namespace std;
 
 class TDate
 {
 protected:
-	int day = 1;
-	int month = 1;
-	int year = 1970;
+	int day;
+	int month;
+	int year;
 public:
-	TDate() {};
+	TDate();
 	TDate(string);
 	int GetDays();
 	void IncreaseDate(int day = 0, int month = 0, int year = 0);
@@ -24,14 +25,14 @@ public:
 
 class TDate1 : public TDate {
 public:
-	TDate1(string line):TDate(line) {};
+	TDate1(string);
 	void ShowDate() override;
 };
 
 class TDate2 : public TDate {
 public:
-	TDate2(string line) :TDate(line) {};
+	TDate2(string);
 	void ShowDate() override;
 };
 
-vector<string> timesplit(string line);
+bool IsDateValid(cmatch);

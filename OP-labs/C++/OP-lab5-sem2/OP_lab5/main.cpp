@@ -2,29 +2,28 @@
 ло, місяць та рік, і методи для порівняння дат, заданих різними форматами, їх збі -
 льшення / зменшення на вказану величину.На основі цього класу створити класи -
 нащадки TDate1 та TDate2, що представляють дати в форматі "ЧЧ.ММ.РРРР" та
-"ММ-ЧЧ-РРРР" відповідно.Створити n об'єктів TDate1 та m об'єктів TDate2.
+"ЧЧ-MM-РРРР" відповідно.Створити n об'єктів TDate1 та m об'єктів TDate2.
 Визначити саму пізню дату, а також дати, що належать заданому періоду дат. */
 
 #include "TDate.h"
 
 int main() {
-	setlocale(LC_ALL, "rus");
 	vector <TDate*> base;
 	int n, m;
 	string str;
-	cout << "Введите n >> "; cin >> n;
+	cout << "Enter n >> "; cin >> n;
 	cin.ignore();
 	for (int i = 0; i < n; i++) {
 		getline(cin, str);
 		base.push_back(new TDate1(str));
 	}
-	cout << "Введите m >> "; cin >> m;
+	cout << "Enter m >> "; cin >> m;
 	cin.ignore();
 	for (int i = 0; i < m; i++) {
 		getline(cin, str);
 		base.push_back(new TDate2(str));
 	}
-	cout << "Список введенных дат в соответствующем формате:\n";
+	cout << "List of daets in according format:\n";
 	TDate* latest = base[0];
 	for (int i = 0; i < m + n; i++) {
 		base[i]->ShowDate();
@@ -32,14 +31,14 @@ int main() {
 			latest = base[i];
 		}
 	}
-	cout << "Самая поздняя дата среди введенных: ";
+	cout << "The latest date: ";
 	latest->ShowDate();
 	string date1, date2;
-	cout << "Введите нижний предел диапазона дат: ";
+	cout << "Enter the lower limit: ";
 	getline(cin, date1);
-	cout << "Введите верхний предел диапазона дат: ";
+	cout << "Enter the upper limit: ";
 	getline(cin, date2);
-	cout << "Даты, которые входят в заданный диапазон:\n";
+	cout << "Dates that suit the given range:\n";
 	for (int i = 0; i < m + n; i++) {
 		if (base[i]->IsInTimeInterval(date1, date2)) {
 			base[i]->ShowDate();
