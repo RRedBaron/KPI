@@ -1,5 +1,5 @@
-﻿  tree.cpp
-  main.cpp
-C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-sem2-lab6\OP-sem2-lab6\main.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+﻿  main.cpp
+C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab6-sem2\OP-sem2-lab6\main.cpp(8,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  tree.cpp
   Создание кода...
-  OP-sem2-lab6.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-sem2-lab6\x64\Debug\OP-sem2-lab6.exe
+  OP-sem2-lab6.vcxproj -> C:\Users\user\Documents\GitHub\KPI\OP-labs\C++\OP-lab6-sem2\x64\Debug\OP-sem2-lab6.exe

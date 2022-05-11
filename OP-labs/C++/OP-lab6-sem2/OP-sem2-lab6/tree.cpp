@@ -2,13 +2,14 @@
 
 void AddElement(Branch*& branch, int number) {
 	if (!branch)
-	{
+	{	
 		branch = new Branch;
 		branch->number = number;
 		branch->left = 0;
 		branch->right = 0;
 		return;
 	}
+	
 	else
 	{
 		if (number < branch->number) {
