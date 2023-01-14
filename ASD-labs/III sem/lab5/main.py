@@ -1,48 +1,17 @@
-import random as rand
-
-import crossover
-import local
-import mutation
-from graph_module import nodes_n
-from individual import Individual
+from genetic_algorithm_utils import *
+from utils import *
 
 
-def create_population(population):
-    for i in range(nodes_n):
-        chromosome = [0 for _ in range(nodes_n)]
-        chromosome[i] = 1
-        population.append(Individual(chromosome))
-    return 1
+def main():
+    iteration = 100_000
+    crossover_func = two_point_crossover
+    mutation_func = randomly_flip_one_bit
+    local_func = add_adjacent_node_by_heuristic
 
-
-def max_and_rand(population):
-    a = max(population)
-    b = rand.choice(population)
-    while a == b:
-        b = rand.choice((population))
-
-    return a, b
-
-
-def delete_rand_min(population):
-    minimum = []
-    m = population[0].f
-    for ind in population:
-        if ind.f < m:
-            minimum.clear()
-            m = ind.f
-            minimum.append(ind)
-        elif ind.f == m:
-            minimum.append(ind)
-    population.remove(rand.choice(minimum))
-
-
-def run(crossover_func, mutation_func, local_func):
     a, b, c = 100000, 100000, 100000
-    population = []
-    record = create_population(population)
-
-    for i in range(100_000):
+    population = create_population()
+    record = max([i.f for i in population])
+    for i in range(iteration):
         if not i % 10_000:
             print(i)
 
@@ -50,12 +19,12 @@ def run(crossover_func, mutation_func, local_func):
         child = crossover_func(*parents)
 
         if rand.random() <= 0.25:
-            mutation_func(child)
+            mutation_func(child.chromosome)
 
         if not child.f:
             continue
 
-        local_func(child)
+        local_func(child.chromosome)
 
         if child.f > record:
             record = child.f
@@ -69,11 +38,11 @@ def run(crossover_func, mutation_func, local_func):
                 break
 
         if child not in population:
-            population += child,
+            population.append(child)
             delete_rand_min(population)
 
     return a, b, c
 
 
 if __name__ == '__main__':
-    run(crossover.two_point, mutation.rand_change_one, local.add_adj_node_heuristic)
+    main()
